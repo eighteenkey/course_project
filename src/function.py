@@ -1,4 +1,4 @@
-def executed_base():
+def executed_base(json_file):
     """
     Функция работает с json списком, преобразует в python и фильтрует, оставляя только успешно выполненные транзакции.
     :return:Список выполненных банковских транзакций.
@@ -6,7 +6,7 @@ def executed_base():
     import json
     executed_transactions = []
 
-    with open('operations.json', 'r', encoding="utf-8") as operations_list:
+    with open(json_file, 'r', encoding="utf-8") as operations_list:
         operations_read = operations_list.read()
     transactions = json.loads(operations_read)
 
